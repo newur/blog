@@ -6,6 +6,8 @@ tags: ["initial", "post"]
 ogImage: logo.png
 ---
 
+Happy new year 2021.
+
 Here is a picture.
 
 {{< img src="logo.png" alt="test" loading="lazy">}}
