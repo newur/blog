@@ -2,6 +2,7 @@
 title: "Yet Another Custom Blog"
 date: 2021-01-01T21:25:35+01:00
 draft: false
+description: "Having a custom blog is irrational - and great!"
 ogimage: flippedCode.jpg
 ---
 

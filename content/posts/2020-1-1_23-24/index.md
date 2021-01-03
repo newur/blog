@@ -2,6 +2,7 @@
 title: "My Blog Setup"
 date: 2021-01-02T00:14:17+01:00
 draft: true
+description: "Summary what tech powers this blog."
 ogImage: flippedCode.jpg
 ---
 
