@@ -12,7 +12,7 @@
     {{ end }}
     <meta property="og:image" content="{{ $ogImg }}">
 
-    {{ $description := .Page.Params "description" }}
+    {{ $description := .Page.Params.description }}
     <meta name="description" content="{{ $description }}">
 
     {{ $title := print .Site.Title " | " .Title }}
