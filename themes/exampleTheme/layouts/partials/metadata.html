@@ -1,0 +1,18 @@
+<div class="grid-left-right">
+    <div class="left">
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        Published
+        <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+    </div>
+    <div class="middle-spacer"></div>
+    <div class="right">
+        Tags
+        {{ with .Params.tags }}
+        {{ range . }}
+        {{ $href := print (absURL "tags/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>

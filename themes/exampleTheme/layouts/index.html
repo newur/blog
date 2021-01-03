@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article>
+    <h1>Articles</h1>
+    <table class="articles">
+        {{ range .Site.RegularPages.ByPublishDate.Reverse }}
+        <tr>
+            <td>
+                <a href="{{ .Permalink }}">{{ .Params.title }}</a>
+            </td>
+            <td class="tableArticleDate">
+                {{ .Params.date.Format "2006-01-02" }}
+            </td>
+        </tr>
+        {{ end }}
+    </table>
+</article>
+
+<br>
+<hr>
+
+<p>
+    The document you are reading right now is 100% hand crafted HTML.
+    It is hosted on my own little server and is free of tracking, cookies or other user hostile features.
+    Feel free to check the source code. ;)
+</p>
+
+{{ end }}

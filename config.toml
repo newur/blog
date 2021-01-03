@@ -1,0 +1,7 @@
+baseURL = "https://ghostletters.xyz/"
+languageCode = "en-us"
+title = "Ghost Letters"
+
+theme = "exampleTheme"
+
+sectionPagesMenu = "main"
