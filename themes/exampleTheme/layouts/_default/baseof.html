@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{- partial "head.html" . -}}
-    <body>
-        <div class="grid-container">
-            {{- partial "header.html" . -}}
-            <div class="content">
-            {{- block "main" . }}{{- end }}
-            </div>
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+    <body class="grid-container">
+        <header class="generalHeader">
+            {{ partial "header.html" . }}
+        </header>
+        <main class="generalContent">
+            {{ block "main" . }}{{ end }}
+        </main>
+        <footer class="generalFooter">
             {{- partial "footer.html" . -}}
-        </div>
+        </footer>
     </body>
 </html>

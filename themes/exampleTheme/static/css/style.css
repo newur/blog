@@ -30,12 +30,12 @@ body {
     ". content ."
     ". footer .";
 }
-.content { grid-area: content; }
-.footer {
+.generalHeader { grid-area: header; }
+.generalContent { grid-area: content; }
+.generalFooter {
   grid-area: footer;
   margin-top: 1.5em;
 }
-.header { grid-area: header; }
 
 
 .grid-left-right {
