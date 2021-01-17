@@ -3,7 +3,7 @@ title: "Basic Blog Setup"
 date: 2021-01-17T00:17:00+01:00
 draft: false
 tags: ["blog", "setup", "basic", "series"]
-description: "Summary what tech powers a custom blog."
+description: "Summary which building blocks powers a custom blog."
 ogImage: tool.jpg
 ---
 
