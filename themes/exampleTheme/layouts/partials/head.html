@@ -6,10 +6,18 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
 {{ $ogImg := print .Site.BaseURL "logo.png" }}
+
 {{ if isset .Page.Params "ogimage" }}
-    {{ $ogImg = print .Page.Permalink .Page.Params.ogimage }}
+    {{ $ogImg = print .Page.Params.ogimage }}
+    {{ $src := .Page.Resources.GetMatch (printf "*%s*" $ogImg) }}
+
+    {{/* mastodon does not show large pictures, so need link to small one */}}
+    {{ $tinyw := default "500x" }}
+    {{ $tinyPic := ($src.Resize $tinyw) }}
+
+    {{ $ogImg = print .Page.Permalink $tinyPic.RelPermalink }}
 {{ end }}
-<meta property="og:image" content="https://blog.ghostletters.xyz/posts/2020-1-17_17-00/tool_hu309e4d051059fd40868e5e91ee0c3bc4_1105176_500x0_resize_q75_box.jpg">
+<meta property="og:image" content="{{ $ogImg }}">
 
 {{ $description := .Page.Params.description }}
 <meta name="description" content="{{ $description }}">
