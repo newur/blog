@@ -7,9 +7,9 @@
 
 {{ $ogImg := print .Site.BaseURL "logo.png" }}
 {{ if isset .Page.Params "ogimage" }}
-{{ $ogImg = print .Page.Permalink .Page.Params.ogimage }}
+    {{ $ogImg = print .Page.Permalink .Page.Params.ogimage }}
 {{ end }}
-<meta property="og:image" content="{{ $ogImg }}">
+<meta property="og:image" content="https://blog.ghostletters.xyz/posts/2020-1-17_17-00/tool_hu309e4d051059fd40868e5e91ee0c3bc4_1105176_500x0_resize_q75_box.jpg">
 
 {{ $description := .Page.Params.description }}
 <meta name="description" content="{{ $description }}">
