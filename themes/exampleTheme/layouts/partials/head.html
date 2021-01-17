@@ -15,7 +15,7 @@
     {{ $tinyw := default "500x" }}
     {{ $tinyPic := ($src.Resize $tinyw) }}
 
-    {{ $ogImg = print .Page.Permalink $tinyPic.RelPermalink }}
+    {{ $ogImg = print .Site.BaseURL $tinyPic.RelPermalink }}
 {{ end }}
 <meta property="og:image" content="{{ $ogImg }}">
 
