@@ -14,7 +14,7 @@ When you want to host your blog own blog there is a bunch of ingredients you wil
 In my case the setup went along the following steps:
 
 * buy a **domain** from a domain registrar (~5 Euro per year)
-    - finding a nice name that is affordable is great fun. :D The first couple of searches will result in the desired name is either registered already and used for something or the name is registered and up for sale, but for a ridiculous amount of money. Anyway, in the end you will find more interesting and fun names than you can use.
+    - finding a nice name that is affordable is great fun. :D The first couple of searches will result in the desired name is either registered already and used for something, or the name is registered and up for sale, but for a ridiculous amount of money. Anyway, in the end you will find more interesting and fun names than you can use.
 * rent a **server** (~5 Euro a month)
     - renting an own dedicated server (read: some bare metal machine that is used by your blog exclusively) might be overkill for the beginning, so I went with a virtual server which is a lot cheaper
     - for a purely static site one could also go with some web space (imagine like a online hard drive where you can place files, but not install any application), but web space puts rather hard limits on what you can do with it and therefore is less fun ;)
