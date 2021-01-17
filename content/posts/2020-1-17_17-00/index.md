@@ -1,5 +1,5 @@
 ---
-title: "Basic Blog Setup"
+title: "Basic Blog Blocks"
 date: 2021-01-17T00:17:00+01:00
 draft: false
 tags: ["blog", "setup", "basic", "series"]
