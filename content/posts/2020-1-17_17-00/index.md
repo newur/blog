@@ -21,7 +21,7 @@ In my case the setup went along the following steps:
 * wire the domain and your server together via a **DNS entry** (free)
     - your server will have an IP address that is only numbers (and dots). So the DNS entry (called A Record) will connect the domain (your-domain.com) to a server IP like 23.65.75.88
 * install a **web server** on your (virtual) server (free)
-    - web server here means an application. Without this application your server does not know what it should to when a potential reader visits your domain
+    - web server here means an application. Without this application your server does not know what it should do when a potential reader visits your domain
 * put an **HTML file** (or a plain text file for the moment) on your server and BOOM you have a blog
     - okay no sane person would call it a blog, yet, but belief me, the first time you type your domain into your phone, and it returns _something_ fell like magic :))
     
