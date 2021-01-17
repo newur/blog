@@ -7,7 +7,7 @@ description: "Summary what tech powers a custom blog."
 ogImage: tool.jpg
 ---
 
-When you want to host your blog own blog there is a bunch of ingredients you will need. While you can always go more low level (wanna write an own web server?) the general parts are somewhat fixed. You will need a domain, a server, a web server and some content. Oh, and you need to wire it all together, because each part on its own is as helpful as an unassembled Ikea shelf.
+When you want to host your own blog there is a bunch of ingredients you will need. While you can always go more low level (wanna write an own web server?) the general parts are somewhat fixed. You will need a domain, a server, a web server and some content. Oh, and you need to wire it all together, because each part on its own is as helpful as an unassembled Ikea shelf.
 
 {{< img src="tool.jpg" alt="screw tool" loading="lazy">}}
 
