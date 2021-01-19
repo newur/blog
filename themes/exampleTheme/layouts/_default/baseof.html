@@ -4,13 +4,13 @@
         {{ partial "head.html" . }}
     </head>
     <body class="grid-container">
-        <header class="generalHeader">
+        <header class="topLevelHeader">
             {{ partial "header.html" . }}
         </header>
-        <main class="generalContent">
+        <main class="topLevelContent">
             {{ block "main" . }}{{ end }}
         </main>
-        <footer class="generalFooter">
+        <footer class="topLevelFooter">
             {{- partial "footer.html" . -}}
         </footer>
     </body>
