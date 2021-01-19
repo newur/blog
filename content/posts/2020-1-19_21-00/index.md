@@ -7,11 +7,11 @@ description: "Summary which building blocks powers a custom blog."
 ogImage: thinking_bird.png
 ---
 
-As outlinde in the last post, having a server that is reachable by a custom domain is very nice. However, having a server and having a blog are still two different kettles of fish. One needs at least some kind of web server that hands (preferably) HTML files to each visiting browser.
+As outlinde in the last post, having a server that is reachable by a custom domain is very nice. However, having a server and having a blog are still two different kettles of fish. One needs at least some kind of web server that hands (preferably) HTML files to each visiting browser. Good, web server software is free and plentiful. HTML is easy to write even with the dumbest text editor. So my first impulse was to actually write *all* pages by hand.
 
 {{< img src="thinking_bird.png" alt="a wild bird" loading="lazy">}}
 
-Good, web server software is free and plentiful. HTML is easy to write even with the dumbest text editor. So my first impulse was to actually write *all* pages by hand. A fully manual approach provides maximum control, even about *invisible* stuff like the source formatting, which I weirdly care about (more on that later).
+ A fully manual approach provides maximum control, even about *invisible* stuff like the source formatting, which I weirdly care about (more on that later).
 While already planning a simple CSS grid layout in my mind, I remembered a painful lesson that every let's-write-each-site-by-hand tryhard experiences sooner or later: changing the **common parts** will drive you nuts.
 You will always have some common layout pieces like the header, footer and meta data. As soon as you fall into the trap of hard wiring your content into this layout and start copying these files, you are doomed. With each new article changing the common parts becomes more painful, error prone and time consuming. In the end you will most likely drop all changes that are not absolutly required (read: all) and sleep very bad because you fear that it is still not consistent across all pages. Do not go down this path.
 
