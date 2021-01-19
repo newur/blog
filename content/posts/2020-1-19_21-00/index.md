@@ -4,12 +4,12 @@ date: 2021-01-19T20:46:12+01:00
 draft: false
 tags: ["blog", "setup", "basic", "series"]
 description: "Summary which building blocks powers a custom blog."
-ogImage: thinking_bird.png
+ogImage: thinking_bird.jpg
 ---
 
 As outlinde in the last post, having a server that is reachable by a custom domain is very nice. However, having a server and having a blog are still two different kettles of fish. One needs at least some kind of web server that hands (preferably) HTML files to each visiting browser. Good, web server software is free and plentiful. HTML is easy to write even with the dumbest text editor. So my first impulse was to actually write *all* pages by hand.
 
-{{< img src="thinking_bird.png" alt="a wild bird" loading="lazy">}}
+{{< img src="thinking_bird.jpg" alt="a wild bird" loading="lazy">}}
 
  A fully manual approach provides maximum control, even about *invisible* stuff like the source formatting, which I weirdly care about (more on that later).
 While already planning a simple CSS grid layout in my mind, I remembered a painful lesson that every let's-write-each-site-by-hand tryhard experiences sooner or later: changing the **common parts** will drive you nuts.
