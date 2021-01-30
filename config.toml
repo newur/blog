@@ -2,6 +2,6 @@ baseURL = "https://blog.ghostletters.xyz/"
 languageCode = "en-us"
 title = "Ghost Letters"
 
-theme = "exampleTheme"
+theme = "ghostletters"
 
 sectionPagesMenu = "main"
