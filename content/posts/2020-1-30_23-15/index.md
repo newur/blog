@@ -1,5 +1,5 @@
 ---
-title: "Basic Blogging Blocks - RSS Feed"
+title: "Basic Blog Blocks - RSS Feed"
 date: 2021-01-30T23:15:44+01:00
 draft: false
 tags: ["blog", "basic", "series", "rss", "feed"]
