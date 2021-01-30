@@ -19,7 +19,7 @@ So the question was the perfect trigger to start learning at least a bit about R
 
 Second goodie was, the Hugo documentation was very clear on how to add it to the page. Just copy and paste a few generic lines into the `head` part of the HTML and RSS reader find it automatically. I verified with two different readers that everything works as expected, and it did. Nice.
 
-I asked the people of mastodon if they prefer a visible link as addition on the page, and they affirmed. So I followed their wisdom and added the feed to the start page. Overall it was very easy, basically zero work, and I learned something new. Since I have now RSS readers on my phone and in my desktop browser I might start using them for other blogs.
+I asked the people of mastodon if they prefer a visible link as addition on the page, and they affirmed. So I followed their wisdom and added [the 'new' feed](https://blog.ghostletters.xyz/index.xml) to the start page. Overall it was very easy, basically zero work, and I learned something new. Since I have now RSS readers on my phone and in my desktop browser I might start using them for other blogs.
 
 Drop me a message on mastodon and share which RSS feeds you consider a good reading source. Surprise me with your selection. :)
 
