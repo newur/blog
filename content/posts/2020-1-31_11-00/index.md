@@ -4,9 +4,12 @@ date: 2021-01-31T12:03:26+01:00
 draft: false
 tags: ["blog", "series", "caddy", "webserver"]
 description: "Get your HTTPS certificate with zero effort."
+ogImage: grind_finer.jpg
 ---
 
-With a domain and a (virtual) server the foundation is ready, and we can start to serve some basic HTML to our readers. Therefore, we need a web server - meaning a software that can talk to browsers that call our domain. I went with [Caddy 2](https://caddyserver.com/), which is a rather new web server written in Go. The nice part of caddy is that it was developed with encryption via https in mind. So it comes with support for [Let's Encrypt](https://letsencrypt.org/) out of the box, no plugins needed. Neat!
+With a domain and a (virtual) server the foundation is ready, and we can start to serve some basic HTML to our readers. Therefore, we need a web server - meaning a software that can talk to browsers that call our domain. I went with [Caddy 2](https://caddyserver.com/), which is a rather new web server written in Go. The nice part of caddy is that it was developed with encryption via https in mind. So it comes with support for [Let's Encrypt](https://letsencrypt.org/) out of the box, no plugins needed. Neat! So how does it look in detail?
+
+{{< img src="grind_finer.jpg" alt="RSS feed icon" loading="lazy">}}
 
 The full caddy configuration for my blog looks like this:
 
