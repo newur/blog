@@ -1,6 +1,6 @@
 ---
 title: "Basic Blog Blocks - Caddy Web Server"
-date: 2021-01-31T12:03:26+01:00
+date: 2021-01-31T12:03:27+01:00
 draft: false
 tags: ["blog", "series", "caddy", "webserver"]
 description: "Get your HTTPS certificate with zero effort."
