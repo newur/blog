@@ -68,7 +68,7 @@ So from a user perspective the following 3 links are identical, because they all
 
 In case you are interested in why I always use the first version, check out this post from the legendary Sir Tim Berners-Lee [Cool URIs don't change](https://www.w3.org/Provider/Style/URI)
 
-Bonus: this little extra config makes sure all requests to the domain with the `blog` sub domain get redirected to the blog. This might change in the future, but for now avoids request that go into void.
+Bonus: This little extra config makes sure all requests to the domain without the `blog` sub domain get redirected to the blog. This might change in the future, but for now avoids request that go into void.
 
 ``` bash
 ghostletters.xyz {
