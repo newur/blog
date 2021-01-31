@@ -74,5 +74,6 @@ Bonus: this little extra config makes sure all requests to the domain with the `
 ghostletters.xyz {
   redir https://blog.ghostletters.xyz{uri}
 }
-
 ```
+
+*This post lacks some polish, but I wanted to get it out before leaving the house. So please check it later again for a final version. :)*
