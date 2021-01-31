@@ -1,0 +1,21 @@
+{{/* include only a small image in RSS feed */}}
+
+{{/* get file that matches the filename as specified as src="" in shortcode */}}
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+
+{{/* set image sizes, these are hardcoded for now, x dictates that images are resized to this width */}}
+{{ $tinyw := default "500x" }}
+
+{{/* resize the src image to the given sizes */}}
+{{ .Scratch.Set "tiny" ($src.Resize $tinyw) }}
+
+{{/* add the processed images to the scratch */}}
+{{ $tiny := .Scratch.Get "tiny" }}
+
+{{ $img := imageConfig ($src.RelPermalink | printf "content/%s" ) }}
+
+<div class="img">
+    <img src="{{ $tiny.RelPermalink }}"
+         width="{{ $img.Width }}" height="{{ $img.Height }}"
+    {{ with .Get "alt" }}alt="{{.}}"{{ else }}alt=""{{ end }}>
+</div>
