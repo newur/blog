@@ -24,7 +24,7 @@ blog.ghostletters.xyz {
 }
 ```
 
-5 lines of config, and the site is reachable via https. All the certificate negotation with Let's Encrypt is done in the background. Only make sure you set up a proper A Record for your subdomain (here the `blog` part in front of the domain), otherwise the whole magic won't work.
+Five lines of config, and the site is reachable via https. All the certificate negotiation with Let's Encrypt is done in the background. Only make sure you set up a proper DNS A Record for your domain (here for the `blog` sub domain), otherwise the whole magic won't work.
 
 Let's have a closer look at each line. 
 
@@ -34,7 +34,7 @@ blog.ghostletters.xyz {
 }
 ```
 
-This creates a config block that will be applied to the (sub) domain `blog.ghostletters.xyz`. As said before, caddy will try to organize a https certificate for this (sub) domain.
+This creates a config block that will be applied only to the sub domain `blog.ghostletters.xyz`. As said before, caddy will automatically try to organize a https certificate for this (sub) domain.
 
 The following 3 lines are pretty self explaining.
 
@@ -53,25 +53,25 @@ The last line is the most interesting one.
 ```
 
 This tells caddy what it should do when there is no exact match for a given path. This is best explained with an example:
-- a user clicks a link to this post, for instance: `blog.ghostletters.xyz/posts/2020-1-31_11-00/` (the part after the first slash is called *path*)
+- a user clicks a link to this post, for instance: `blog.ghostletters.xyz/posts/2020-1-31_11-00/` The part after the first slash is called *path*.
 - caddy looks for a file at `/path/to/blog/posts/2020-1-31_11-00/`
     - `/path/to/blog` is defined in our config
-    - `/posts/2020-1-31_11-00/` is the *path part* of the link
+    - `/posts/2020-1-31_11-00/` is the *path* part of the link
     - `/path/to/blog/posts/2020-1-31_11-00/` leads to folder, not to a file!
-- caddy applies the `try_files` rules from left to right to find a file
+- caddy applies the `try_files` rules from left to right
     - is there a file when we add `.html` to the path? - No.
-    - is there a file at the path? - No.
+    - is there a file at just the path? - No.
     - is there a file when we append `index.html`? - Yes!
-    - fallback would be a redirect to the start page. Notice the last `index.html` is without a path. So this is a file at the top-level, directly in `/path/to/content`.
+    - fallback would be a redirect to the start page. Notice the last `index.html` is without a path. So this is a file at the top-level, directly in `/path/to/content`
 
 So from a user perspective the following 3 links are identical, because they all lead to the same file
 - [blog.ghostletters.xyz/posts/2020-1-31_11-00/](https://blog.ghostletters.xyz/posts/2020-1-31_11-00/)
 - [blog.ghostletters.xyz/posts/2020-1-31_11-00/index](https://blog.ghostletters.xyz/posts/2020-1-31_11-00/index)
 - [blog.ghostletters.xyz/posts/2020-1-31_11-00/index.html](https://blog.ghostletters.xyz/posts/2020-1-31_11-00/index.html)
 
-In case you are interested in why I always use the first version, check out this post from the legendary Sir Tim Berners-Lee [Cool URIs don't change](https://www.w3.org/Provider/Style/URI)
+In case you wonder why I always use the first version, check out this great post from the legendary Sir Tim Berners-Lee: [Cool URIs don't change](https://www.w3.org/Provider/Style/URI)
 
-Bonus: This little extra config makes sure all requests to the domain without the `blog` sub domain get redirected to the blog. This might change in the future, but for now avoids request that go into void.
+Bonus: This little config makes sure all requests to the domain without the `blog` sub domain get redirected to the blog. This might change in the future, but for now avoids request that go into void.
 
 ``` bash
 ghostletters.xyz {
@@ -79,4 +79,4 @@ ghostletters.xyz {
 }
 ```
 
-*This post lacks some polish, but I wanted to get it out before leaving the house. So please check it later again for a final version. :)*
+And that is all for today. Go away, now. 
