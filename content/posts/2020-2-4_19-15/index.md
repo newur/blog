@@ -7,7 +7,7 @@ description: "Simple, beautiful, semantic HTML shell."
 
 ---
 
-The domain is connected to the (virtual) server, the web server software is idling for requests. So finally, we are ready to write our content, aren't we? Not quite. We still need the basic HTML that structures our content. Otherwise, we might just hand out plain text and that is something nobody likes. Plain text tends to be hard to parse for machines and for humans, as well (kind of).
+The domain is connected to the (virtual) server, the web server software is idling for requests. So finally, we are ready to write our content, aren't we? Not quite. We still lack the basic HTML that structures our content. Otherwise, we might just hand out plain text and that is something nobody likes. Plain text tends to be hard to parse for machines and for humans, as well (kind of).
 
 I refer here to the general surrounding of the content as *shell*. This term is used for Progressive Web Apps (PWAs), and is described as
 
@@ -15,7 +15,7 @@ I refer here to the general surrounding of the content as *shell*. This term is 
 
 Source: [developers.google.com](https://developers.google.com/web/fundamentals/architecture/app-shell)
 
-I will come back on the CSS part in a later post. For now, let us focus on the HTML structure. We want to have nice, semantic elements that structure each site. Thanks to HTML 5 we can avoid `div`s completely for the shell.
+I will come back on the CSS part in a later post. For now, let us focus on the HTML topic. We want to have nice, semantic elements that structure each site. Thanks to HTML 5 we can avoid semantic-less `div`s completely for the shell.
 
 Okay, enough with the foreplay, show me the code!
 
@@ -41,7 +41,7 @@ Okay, enough with the foreplay, show me the code!
 
 Even if you do not know anything about HTML, one can probably make some sense of this structure. Quickly going through it  from top to bottom
 
-- all HTML docs must start with a `DOCTYPE`. The doc type is not an HTML tag, but a ["information" to the browser about what document type to expect](https://www.w3schools.com/tags/tag_doctype.asp). 
+- all HTML pages must start with a `DOCTYPE`. The doc type is not an HTML tag, but a ["information" to the browser about what document type to expect](https://www.w3schools.com/tags/tag_doctype.asp). 
 - all tags are wrapped into an `html` element.
 - the `head` part contains meta information so other machines can make sense of your page. Meta information is often related to SEO (Search Engine Optimization), but is not limited to it. For instance, to get a nice preview picture on your mastodon toot, you want to put some special tag in the `head`.
 - the `body` contains the actual content of your page. These are also the parts that will be visible to your readers.
