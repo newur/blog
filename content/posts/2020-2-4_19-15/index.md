@@ -2,7 +2,7 @@
 title: "Basic Blog Blocks - HTML Shell"
 date: 2021-02-04T19:06:53+01:00
 draft: false
-tags: ["blog", "series", "caddy", "webserver"]
+tags: ["blog", "series", "html5", "shell"]
 description: "Simple, beautiful, semantic HTML shell."
 
 ---
