@@ -120,11 +120,6 @@ blockquote {
   padding: 5px 25px;
 }
 
-table {
-  width: 100%;
-}
-
-
 /* Background */ .chroma { color: #f8f8f2; background-color: #272822 }
 /* Other */ .chroma .x {  }
 /* Error */ .chroma .err { color: #960050; background-color: #1e0010 }
