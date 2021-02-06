@@ -24,20 +24,20 @@ Okay, enough with the foreplay, show me the code!
 ``` html
 <!DOCTYPE html>
 <html>
-    <head>
-        // meta data will go here - static + dynamic
-    </head>
-    <body>
-        <header>
-            // page header will go here - static
-        </header>
-        <main>
-            // actual content - dynamic
-        </main>
-        <footer>
-            // page footer will go here - static
-        </footer>
-    </body>
+   <head>
+      meta data will go here - static + dynamic
+   </head>
+   <body>
+      <header>
+         page header will go here - static
+      </header>
+      <main>
+         actual content - dynamic
+      </main>
+      <footer>
+         page footer will go here - static
+      </footer>
+   </body>
 </html>
 ```
 
