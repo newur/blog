@@ -4,16 +4,18 @@ date: 2021-02-04T19:06:53+01:00
 draft: false
 tags: ["blog", "series", "html5", "shell"]
 description: "Simple, beautiful, semantic HTML shell."
-
+ogImage: card_house_one.jpg
 ---
 
 The domain is connected to the (virtual) server, the web server software is idling for requests. So finally, we are ready to write our content, aren't we? Not quite. We still lack the basic HTML that structures our content. Otherwise, we might just hand out plain text and that is something nobody likes. Plain text tends to be hard to parse for machines and for humans, as well (kind of).
+
+{{< img src="card_house_one.jpg" alt="RSS feed icon" loading="lazy">}}
 
 I refer here to the general surrounding of the content as *shell*. This term is used for Progressive Web Apps (PWAs), and is described as
 
 > The app "shell" is the minimal HTML, CSS and JavaScript required to power the user interface [..]
 
-Source: [developers.google.com](https://developers.google.com/web/fundamentals/architecture/app-shell)
+{{<source "developers.google.com" "https://developers.google.com/web/fundamentals/architecture/app-shell">}}
 
 I will come back on the CSS part in a later post. For now, let us focus on the HTML topic. We want to have nice, semantic elements that structure each site. Thanks to HTML 5 we can avoid semantic-less `div`s completely for the shell.
 
