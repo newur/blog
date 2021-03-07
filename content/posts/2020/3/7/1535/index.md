@@ -7,7 +7,7 @@ description: "Feeding the machine"
 #ogImage: grind_finer.jpg
 ---
 
-Have a closer look at a rather minimal, but stylish `head` section in my HTML documents.
+Have a closer look at a rather minimal, but functional `head` section in my HTML documents.
 
 ```html
 <meta charset="utf-8">
@@ -36,11 +36,11 @@ The first group in line `1` and `2` is purely technical and helps your browser t
 
 I dunno why `UTF-8` is not assumed as default, but maybe in other parts of the world another text encoding dominates web pages. Picking the wrong (or no encoding) at all was a popular mistake that transformed non ASCII characters into the replacement character �. This char (U+FFFD) is [used to replace an unknown, unrecognized or unrepresentable character](https://en.wikipedia.org/wiki/Specials_(Unicode_block)). Since, home grown sites are rather the exception nowadays, the `U+FFFD` became an endangered species.
 
-I forgot where I picked up the second line (so it was probably from [lighthouse](https://web.dev/measure) to push my score).
+I forgot where I picked up the second line (so it was probably from [lighthouse](https://web.dev/measure) to push my score). I think it helps with scaling issues on mobile and/or high res devices.
 
 ### Visual Appearance
 
-The second group deals with visual stuff, like how the pages looks in a _normal_ browser. So if you are a hard core minimalist that counts every byte and/or targets terminal browsers (which might ignore CSS styling completely, like [w3m](http://manpages.ubuntu.com/manpages/bionic/man1/w3m.1.html)), you might want to skip this part completely. 
+The second group deals with visual stuff, like how the pages looks in a _normal_ browser. So if you are a hard core minimalist that counts every byte and/or targets terminal browsers (which tend to ignore CSS completely, like [w3m](http://manpages.ubuntu.com/manpages/bionic/man1/w3m.1.html)), you might want to skip this part completely. For the rest, I highly recommend having some basic styling in one common `.css` file.
 
 ```html {linenostart=4}
 <link rel="stylesheet" type="text/css" href="/css/style.css">
@@ -48,9 +48,7 @@ The second group deals with visual stuff, like how the pages looks in a _normal_
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 ```
 
-For the rest, I highly recommend having some basic styling in one common `.css` file.
-
-While modern CSS is often deemed highly confusing - or a total mess - you can ignore most of it in the beginning. The following parts should be sufficient to get started and have a decent layout and look:
+While modern CSS is often deemed highly confusing - or a total mess - you can ignore most of it in the beginning. The following bullet points should be sufficient to get started and create a decent layout and look:
 
 - build 3x3 layout with CSS grid. Period. Grid is by far the greatest layout system I have seen so far (ping me on Mastodon if you know a better). Use a [generator](https://grid.layoutit.com/) and read [Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) and you are good to go.
 - copy styling from other websites that you like. Right click and `Inspect` an element you like, and the browser will show its CSS properties.
@@ -58,7 +56,7 @@ While modern CSS is often deemed highly confusing - or a total mess - you can ig
 
 You might have stumbled over articles advocating for inline CSS which is supposed to be 'faster' and less likely to break in unexpected ways. Don't listen to this. Inlining style will have a similar effect like writing each HTML page fully by hand: you become unable to keep it consistent in no time, because it is scattered across all your pages. Just don't do it. Each decent web server will cache the file and serve it to each visitor only once (and again after you changed it). This is by far the best compromise of speed and maintainability one can ask for.
 
-The two lines after the style sheet link are for nice little favicons, which are the little pictures on browser tabs or bookmarks. There is a whole world regarding favicons and how many you 'must' provide. Check [this article](https://sympli.io/blog/heres-everything-you-need-to-know-about-favicons-in-2020/) in case you want to know more. I created just 1 very high resolution one and fed it into one of the many favicon generators you find online. I then picked a larger one for tablet users and one rather small one for all the rest. Just try to find an icon that is somewhat recognizable for 16x16 and 180x180 pixels.
+The two lines after the style sheet link are for favicons, which are the nice, little pictures on browser tabs or bookmarks. There is a whole world regarding favicons and how many you 'must' provide. Check [this article](https://sympli.io/blog/heres-everything-you-need-to-know-about-favicons-in-2020/) in case you want to know more. I created just one high resolution one and fed it into one of the many favicon generators you find online. I then picked a larger one for tablet users and one rather small one for all the rest. Just try to find an icon that is somewhat recognizable for sizes between 16x16 and 180x180 pixels.
 
 ### Sharing Meta
 
@@ -75,7 +73,7 @@ Which link looks jucier, waiting for your click? This sad bare bone...
 
 {{< img src="no_preview.png" alt="screenshot of mastodon post without preview pic" loading="lazy">}}
 
-...or this bad boy?
+...or this bad boy? Notice the additional description next to the beautiful preview picture.
 
 {{< img src="with_preview.png" alt="screenshot of mastodon post with preview pic" loading="lazy">}}
 
