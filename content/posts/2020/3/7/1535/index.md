@@ -7,7 +7,7 @@ description: "Feeding the machine"
 #ogImage: grind_finer.jpg
 ---
 
-Habe a closer look at a rather minimal, but stylish `head` section in my HTML documents.
+Have a closer look at a rather minimal, but stylish `head` section in my HTML documents.
 
 ```html
 <meta charset="utf-8">
@@ -27,22 +27,28 @@ As you can see, I grouped the `head` content into 4 parts. Let's break them down
 
 ### Text Encoding
 
+The first group in line `1` and `2` is purely technical and helps your browser to display the text properly.
+
 ```html
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-The first group in line `1` and `2` is purely technical and helps your browser to display the text properly. I dunno why `UTF-8` is not assumed as default, but maybe in other parts of the world another text encoding dominates web pages. Picking the wrong (or no encoding) at all was a popular mistake that transformed non ASCII characters into the replacement character �. This char (U+FFFD) is [used to replace an unknown, unrecognized or unrepresentable character](https://en.wikipedia.org/wiki/Specials_(Unicode_block)). I forgot where I picked up the second line (so it was probably from [lighthouse](https://web.dev/measure) to push my score).
+I dunno why `UTF-8` is not assumed as default, but maybe in other parts of the world another text encoding dominates web pages. Picking the wrong (or no encoding) at all was a popular mistake that transformed non ASCII characters into the replacement character �. This char (U+FFFD) is [used to replace an unknown, unrecognized or unrepresentable character](https://en.wikipedia.org/wiki/Specials_(Unicode_block)). Since, home grown sites are rather the exception nowadays, the `U+FFFD` became an endangered species.
+
+I forgot where I picked up the second line (so it was probably from [lighthouse](https://web.dev/measure) to push my score).
 
 ### Visual Appearance
 
-```html
+The second group deals with visual stuff, like how the pages looks in a _normal_ browser. So if you are a hard core minimalist that counts every byte and/or targets terminal browsers (which might ignore CSS styling completely, like [w3m](http://manpages.ubuntu.com/manpages/bionic/man1/w3m.1.html)), you might want to skip this part completely. 
+
+```html {linenostart=4}
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 ```
 
-The second group deals with visual stuff, like how the pages looks in a _normal_ browser. So if you are a hard core minimalist that counts every byte and/or targets terminal browsers (which might ignore CSS styling completely, like [w3m](http://manpages.ubuntu.com/manpages/bionic/man1/w3m.1.html)), you might want to skip this part completely. For the rest, I highly recommend having some basic styling in one common `.css` file.
+For the rest, I highly recommend having some basic styling in one common `.css` file.
 
 While modern CSS is often deemed highly confusing - or a total mess - you can ignore most of it in the beginning. The following parts should be sufficient to get started and have a decent layout and look:
 
@@ -58,7 +64,7 @@ The two lines after the style sheet link are for nice little favicons, which are
 
 I first called this part 'Social Media' but social media gained a rather bad connotation in some circles. _Sharing_ is still accepted as something nice, so let's go with this term.
 
-```html
+```html {linenostart=8}
 <meta property="og:image" content="{{ $ogImg }}">
 <meta name="description" content="{{ $description }}">
 ```
@@ -77,7 +83,7 @@ Again there is a whole lot more behind the `og:` tags. Check out [this guide](ht
 
 ### Title
 
-```html
+```html {linenostart=11}
 <title>{{ $title }}</title>
 ```
 
