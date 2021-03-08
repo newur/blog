@@ -7,7 +7,7 @@ description: "Feeding the machines with HTML heads"
 ogImage: card_house_two.jpg
 ---
 
-Each HTML document consist of to basic building blocks: a `head` and a `body`. The body contains the actual content while the head consists mainly of meta information. Meta information helps the browser to display the body content in the most appropriate way. Furthermore, it helps other machines to make sense of your page. Machines can be search engine robots or social media platforms like Twitter or Facebook. What do we need in `head` section to make human and robots happy?
+Each HTML document consist of to basic building blocks: a `head` and a `body`. The body contains the actual content while the head consists mainly of meta information. Meta information helps the browser to display the body content in the most appropriate way. Furthermore, it helps other machines to make sense of your page. Machines can be search engine robots or social media platforms like Twitter or Mastodon. When you post a link there, the platform tries to display some preview information like a picture and a short summary. What tags do we need in the `head` section to make this preview possible?
 
 {{< img src="card_house_two.jpg" alt="screenshot of mastodon post with preview pic" loading="lazy">}}
 
