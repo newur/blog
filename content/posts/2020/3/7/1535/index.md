@@ -3,11 +3,15 @@ title: "BBB - Head Meta"
 date: 2021-03-07T15:37:25+01:00
 draft: false
 tags: ["blog", "series", "meta", "preview"]
-description: "Feeding the machine"
-#ogImage: grind_finer.jpg
+description: "Feeding the machines with HTML heads"
+ogImage: card_house_two.jpg
 ---
 
-Have a closer look at a rather minimal, but functional `head` section in my HTML documents.
+Each HTML document consist of to basic building blocks: a `head` and a `body`. The body contains the actual content while the head consists mainly of meta information. Meta information helps the browser to display the body content in the most appropriate way. Furthermore, it helps other machines to make sense of your page. Machines can be search engine robots or social media platforms like Twitter or Facebook. What do we need in `head` section to make human and robots happy?
+
+{{< img src="card_house_two.jpg" alt="screenshot of mastodon post with preview pic" loading="lazy">}}
+
+Have a closer look at the rather small, but functional `head` section in my HTML documents.
 
 ```html
 <meta charset="utf-8">
@@ -17,10 +21,10 @@ Have a closer look at a rather minimal, but functional `head` section in my HTML
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
-<meta property="og:image" content="{{ $ogImg }}">
-<meta name="description" content="{{ $description }}">
+<meta property="og:image" content="article_specific_pic.jpg">
+<meta name="description" content="Feeding the machines with HTML heads">
 
-<title>{{ $title }}</title>
+<title>BBB - Head Meta</title>
 ```
 
 As you can see, I grouped the `head` content into 4 parts. Let's break them down.
