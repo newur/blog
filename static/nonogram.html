@@ -1,0 +1,206 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+<!--  <link rel="manifest" href="site.webmanifest">-->
+<!--  <link rel="apple-touch-icon" href="icon.png">-->
+  <!-- Place favicon.ico in the root directory -->
+
+<!--  <link rel="stylesheet" href="css/normalize.css">-->
+<!--  <link rel="stylesheet" href="css/main.css">-->
+  <meta name="theme-color" content="#fafafa">
+
+  <style>
+    :root {
+      --cell-size: 20px;
+    }
+
+    td {
+      border: 1px orchid solid;
+      width: var(--cell-size);
+      height: var(--cell-size);
+      text-align: center;
+    }
+
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    .gray-background {
+      color: white;
+      background-color: lightgray;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .green-background {
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input id="size" type="number" value="4">
+  <button onclick="buildTable()">Go</button>
+
+  <br><br>
+
+  <table id="table">
+
+  </table>
+
+  <script>
+    let tableSize = parseInt(document.getElementById('size').value);
+    let tableSizeDouble = tableSize * 2;
+    let halfTableCeil = Math.ceil(tableSize / 2)
+
+    function buildTable() {
+      tableSize = parseInt(document.getElementById('size').value);
+      tableSizeDouble = tableSize * 2;
+      halfTableCeil = Math.ceil(tableSize / 2)
+      init()
+    }
+
+    function init() {
+      const table = document.getElementById('table');
+      table.innerHTML = ''
+      let rawHtml = createTableRowsHtml();
+      table.insertAdjacentHTML("beforeend", rawHtml);
+    }
+
+    function createTableRowsHtml() {
+      let rawHtml = `<tr>`
+      for (let i = 0; i < tableSizeDouble; i++) {
+        rawHtml += createTableCell(i);
+        rawHtml += `</tr>`
+      }
+      return rawHtml;
+    }
+
+    function createTableCell(i) {
+      let rawHtml = '';
+      for (let j = 0; j < tableSizeDouble; j++) {
+        const counter = (j + 1) + tableSizeDouble * i
+        const counterPadded = '';
+        // const counterPadded = counter.toString().padStart(2, '0')
+
+        let classes = 'bold';
+        let onclickValue = ''
+        if (i + 1 > tableSize && j + 1 > tableSize) {
+          classes = 'green-background'
+          onclickValue = `onclick="doStuff(this)"`
+        }
+        if (i + 1 <= tableSize && j + 1 <= tableSize) {
+          classes = 'gray-background'
+        }
+        if (i < Math.floor((tableSize) / 2) || j < Math.floor((tableSize) / 2)) {
+          classes += ', hidden'
+        }
+
+        rawHtml += `<td  id="${counter}" class="${classes}" ${onclickValue}>${counterPadded}</td>`;
+      }
+      return rawHtml;
+    }
+
+    init();
+
+    function doStuff(element) {
+      element.classList.toggle('red')
+
+      const data = parseInt(element.id);
+      updateTop(data);
+      updateLeft(data);
+
+      element.innerText = element.classList.contains('red') ? 'x' : '';
+    }
+
+    function updateTop(data) {
+      const columnIndex = ((data - 1) % tableSizeDouble);
+      updateColumn(columnIndex);
+    }
+
+    function updateColumn(columnIndex) {
+      const result = calculateColumnResult(columnIndex).filter(value => value !== 0);
+      const resultPadded = [...Array(halfTableCeil - result.length).fill(0), ...result]
+      const oneIfTableSizeIsEven = tableSize % 2 === 0 ? 1 : 0;
+      for (let i = 0; i < halfTableCeil; i++) {
+        const el = getElementById((i + halfTableCeil + oneIfTableSizeIsEven) * tableSizeDouble -
+                (tableSizeDouble - (columnIndex + 1)))
+        updateInnerText(el, resultPadded, i);
+      }
+    }
+
+    function updateInnerText(el, result, i) {
+      el.innerText = result[i] === 0 ? '' : result[i].toString();
+    }
+
+    function calculateColumnResult(columnIndex) {
+      let result = [0]
+      for (let i = tableSize; i < tableSizeDouble; i++) {
+        const el = getElementById(columnIndex + 1 + tableSizeDouble * i)
+        addElementIfHasClassRed(el, result);
+      }
+      return result;
+    }
+
+    function addElementIfHasClassRed(el, result) {
+      if (el.classList.contains('red')) {
+        result[result.length - 1] = result[result.length - 1] + 1;
+      } else {
+        result.push(0)
+      }
+    }
+
+    function updateLeft(data) {
+      const rowIndex = Math.floor((data - 1) / tableSizeDouble);
+      updateRow(rowIndex);
+    }
+
+    function updateRow(rowIndex) {
+      const result = calculateRowResult(rowIndex).filter(value => value !== 0);
+      const resultPadded = [...Array(halfTableCeil - result.length).fill(0), ...result]
+      const oneIfTableSizeIsEven = tableSize % 2 === 0 ? 1 : 0;
+      for (let i = 0; i < halfTableCeil; i++) {
+        const el = getElementById(rowIndex * tableSizeDouble + halfTableCeil + i + oneIfTableSizeIsEven)
+        updateInnerText(el, resultPadded, i);
+      }
+    }
+
+    function calculateRowResult(rowIndex) {
+      let result = [0]
+      for (let i = 0; i < tableSize; i++) {
+        const el = getElementById(rowIndex * tableSizeDouble + i + 1 + tableSize);
+        addElementIfHasClassRed(el, result);
+      }
+      return result;
+    }
+
+    function getElementById(number) {
+      return document.getElementById(number)
+    }
+  </script>
+</body>
+
+</html>
